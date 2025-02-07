@@ -648,6 +648,28 @@ section,
   line-height: 0;
 }
 
+.profile-card {
+  transition: transform 0.3s ease-in-out;
+}
+.profile-card:hover {
+  transform: scale(1.05);
+}
+.content-box {
+  transition: transform 0.3s ease-in-out;
+}
+.content-box:hover {
+  transform: translateY(-5px);
+}
+.skill-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9fa;
+  transition: background 0.3s ease-in-out;
+}
+.skill-box:hover {
+  background: #e9ecef;
+}
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
@@ -717,6 +739,27 @@ section,
   transition: 0.9s;
   background-color: var(--accent-color);
 }
+
+.tech-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tech-card .icon {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
 
 /*--------------------------------------------------------------
 # Resume Section
