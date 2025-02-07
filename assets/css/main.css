@@ -651,15 +651,16 @@ section,
 .profile-card {
   transition: transform 0.3s ease-in-out;
 }
-.profile-card:hover {
-  transform: scale(1.05);
-}
+
 .content-box {
   transition: transform 0.3s ease-in-out;
 }
-.content-box:hover {
-  transform: translateY(-5px);
+
+.profile-card:hover, .content-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
 .skill-box {
   display: flex;
   align-items: center;
@@ -1322,11 +1323,4 @@ section,
   font-size: 20px;
   margin-right: 8px;
   color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
 }
