@@ -932,6 +932,22 @@ section,
   border: 2px solid var(--accent-color);
 }
 
+.download-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #007bff, #6610f2);
+  transition: background 0.4s ease-in-out, transform 0.2s;
+}
+
+.download-btn:hover {
+  background: linear-gradient(90deg, #6610f2, #007bff);
+  transform: translateY(-3px);
+}
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
