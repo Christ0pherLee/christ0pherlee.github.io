@@ -1087,12 +1087,13 @@ section,
   line-height: 0;
 }
 
+/* Apply gradient hover effect to the icon */
 .certifications .service-item:hover .icon {
-  background: var(--surface-color);
+  background: linear-gradient(135deg, #007bff, #6610f2);
 }
 
 .certifications .service-item:hover .icon i {
-  color: var(--accent-color);
+  color: #fff; /* Ensure icon remains visible */
 }
 
 .certifications .service-item .title {
@@ -1101,18 +1102,71 @@ section,
   font-size: 18px;
 }
 
+/* Apply gradient hover effect to the title */
 .certifications .service-item .title a {
   color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
-.certifications .service-item .title a:hover {
-  color: var(--accent-color);
+.certifications .service-item:hover .title a {
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  -webkit-background-clip: text;
+  background-clip: text; /* This is for future compatibility */
+  -webkit-text-fill-color: transparent;
 }
 
 .certifications .service-item .description {
   line-height: 24px;
   font-size: 14px;
 }
+
+/* Add gradient background and text color for btn-primary */
+.certifications .btn-primary {
+  position: relative;
+  color: #fff; /* Default text color */
+  border: 1px solid var(--accent-color); /* Default border */
+  background: var(--accent-color); /* Default background */
+  padding: 10px 20px; /* Adjust padding as needed */
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Gradient effect on hover */
+.certifications .btn-primary:hover {
+  background: linear-gradient(135deg, #007bff, #6610f2); /* Gradient background */
+  color: transparent; /* Transparent text */
+  background-clip: text; /* Apply gradient to text */
+  -webkit-background-clip: text; /* For WebKit browsers */
+}
+
+/* Add hover zoom effect to the button itself */
+.certifications .btn-primary:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Optional zoom effect on the icon */
+.certifications .btn-primary i {
+  transition: transform 0.3s ease;
+}
+
+.certifications .btn-primary:hover i {
+  transform: translateX(5px) translateY(-5px); /* Move icon on hover */
+}
+
+/* Optional shadow effect */
+.certifications .btn-primary.shadow-lg {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.certifications .btn-primary:hover.shadow-lg {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
 
 /*--------------------------------------------------------------
 # Contact Section
