@@ -52,11 +52,10 @@
     </a>
 
     <div class="social-links text-center">
-      <a href="https://dribbble.com/LeeChris" class="dribbble"><i class="bi bi-dribbble"></i></a>
-      <a href="https://github.com/Christ0pherLee" class="github"><i class="bi bi-github"></i></a>
-      <a href="https://www.instagram.com/los.angeles.vibez/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://www.behance.net/christ0pherlee" class="behance"><i class="bi bi-behance"></i></a>
-      <a href="https://www.linkedin.com/in/ChrisLeeDecoded" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/Christ0pherLee" class="github" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="https://www.instagram.com/los.angeles.vibez/" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.behance.net/christ0pherlee" class="behance" target="_blank"><i class="bi bi-behance"></i></a>
+      <a href="https://www.linkedin.com/in/ChrisLeeDecoded" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
@@ -135,9 +134,9 @@
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>What is Infrastructure as Code with Terraform?</h2>
+              <h2>What is Postman?</h2>
               <p>
-                Infrastructure as Code (IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.
+                Postman is an API platform for building and using APIs. Postman simplifies each step of the API lifecycle and streamlines collaboration so you can create better APIs—faster.
               </p>
             </div>
           </div>
@@ -170,6 +169,48 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Javascript Scripts -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Remove "index.html" from the URL
+      if (window.location.pathname.endsWith("index.html")) {
+          history.replaceState({}, document.title, window.location.pathname.replace("index.html", "") + window.location.hash);
+      }
+
+      // Handle anchor links to update the URL without #
+      document.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", function (event) {
+              const href = this.getAttribute("href");
+              if (href.startsWith("#")) {
+                  event.preventDefault(); // Prevent default jump
+                  const sectionID = href.substring(1);
+                  history.pushState({}, "", "/" + sectionID); // Change URL
+                  document.getElementById(sectionID)?.scrollIntoView({ behavior: "smooth" });
+              }
+          });
+      });
+
+      // If the user loads the page with a custom path (e.g., /about), scroll to that section
+      const pathSection = window.location.pathname.substring(1);
+      if (pathSection) {
+          const section = document.getElementById(pathSection);
+          if (section) {
+              section.scrollIntoView({ behavior: "smooth" });
+          } else {
+              history.replaceState({}, "", "/"); // If section doesn't exist, reset URL
+          }
+      }
+
+      // Handle back/forward navigation
+      window.addEventListener("popstate", function () {
+          const sectionID = window.location.pathname.substring(1);
+          if (sectionID) {
+              document.getElementById(sectionID)?.scrollIntoView({ behavior: "smooth" });
+          }
+      });
+  });
+</script>
 
 </body>
 
